@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FaceGbuffer
+  m_Shader: {fileID: 4800000, guid: f19f493c93414254e97855fe5a301272, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _USESTROKE_ON
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BrushTex:
+        m_Texture: {fileID: 2800000, guid: 756ade6fe11a12645acec4d900d0f519, type: 3}
+        m_Scale: {x: 20, y: 2}
+        m_Offset: {x: 9.75, y: 0}
+    - _LUT:
+        m_Texture: {fileID: 2800000, guid: 4acc7228fc0809145ad59dd5e85b9591, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e646750ca82aa204ead277e9d109bfcf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetalnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SDFTex:
+        m_Texture: {fileID: 2800000, guid: a965d14a51ad36b48a1114741b591ea5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SSSLUT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShadowRampTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AmbientStrength: 0.1
+    - _BrushHard1: 0.102
+    - _BrushHard2: 0.058
+    - _BrushHard3: 0.006
+    - _FoldoutEnd2: 0
+    - _FoldoutEnd3: 0
+    - _FoldoutShadowRamp: 1
+    - _FoldoutShadowRampEnd: 0
+    - _FoldoutTex: 0
+    - _FoldoutTex1: 0
+    - _FoldoutTexEnd: 0
+    - _FoldoutTexEnd2: 0
+    - _FoldoutWithKey: 0
+    - _FoldoutWithKey2: 2
+    - _Metalness: 0
+    - _OutlineClampScale: 1.34
+    - _Range1: 0.396
+    - _Range2: 0.262
+    - _Range3: 0.131
+    - _RangeB: 0.15
+    - _Roughness: 0.757
+    - _SHADOW_RAMP: 0
+    - _SmoothNormal: 0
+    - _USENORMALMAP_ON: 0
+    - _USESTROKE_ON: 0
+    m_Colors:
+    - _HighlightsColor: {r: 1, g: 1, b: 1, a: 1}
+    - _LowColor: {r: 0.6132076, g: 0.44255075, b: 0.47668207, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MidColor: {r: 0.7735849, g: 0.48531505, b: 0.5059058, a: 1}
+    - _ShadowColor: {r: 0.9056604, g: 0.59016186, b: 0.508366, a: 1}
+    - _ShadowStrokeColor: {r: 0.2015563, g: 0.043735042, b: 0.043735042, a: 1}
+    - _StrokeColor: {r: 0.2015563, g: 0.043735042, b: 0.043735042, a: 1}
+  m_BuildTextureStacks: []

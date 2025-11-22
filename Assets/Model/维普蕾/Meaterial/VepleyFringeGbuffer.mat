@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VepleyFringeGbuffer
+  m_Shader: {fileID: 4800000, guid: aee7440d032defa4ba6f5ce0de868738, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _SHADOW_RAMP
+  - _USESMOOTHNORMAL_ON
+  - _USESTROKE_ON
+  - _USEUV1TOMASK
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _HairMaskTex:
+        m_Texture: {fileID: 2800000, guid: 04ecdebcf9ca29b4d93471b0c9af1b31, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LUT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 50be1ddb8d565e54d8d8bffd57f0648c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetalnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RoughnessMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ShadowRampTex:
+        m_Texture: {fileID: 2800000, guid: e07727ad53d75fd47886e90a7f0c1930, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AnisotropicOffset: 0
+    - _AnisotropicSlide: 0.15
+    - _BlendDst: 10
+    - _BlendOp: 0
+    - _BlendSrc: 5
+    - _BlinnPhongPow: 2.3
+    - _FoldoutEnd2: 0
+    - _FoldoutEnd3: 0
+    - _FoldoutShadowRamp: 2
+    - _FoldoutShadowRampEnd: 0
+    - _FoldoutTex: 0
+    - _FoldoutTexEnd: 0
+    - _FoldoutWithKey: 1
+    - _FoldoutWithKey2: 2
+    - _HiarAlpha: 0.587
+    - _Metalness: 0
+    - _OutlineClampScale: 1.18
+    - _OutlineWidth: 1
+    - _Roughness: 1
+    - _SHADOW_RAMP: 0
+    - _ShadowOffset: 0.5
+    - _ShadowSmoothNdotL: 0.153
+    - _SmoothNormal: 1
+    - _SpecMinimum: 0.05
+    - _Text: 0.125
+    - _USE: 0
+    - _USENORMALMAP_ON: 0
+    - _USESTROKE_ON: 0
+    - _USEUV1TOMASK: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _ShadowStrokeColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 1}
+    - _StrokeColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
