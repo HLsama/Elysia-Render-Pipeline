@@ -67,10 +67,10 @@ Material:
     - _FoldoutEnd3: 0
     - _FoldoutShadowRamp: 0
     - _FoldoutShadowRampEnd: 0
-    - _FoldoutTex: 0
+    - _FoldoutTex: 1
     - _FoldoutTexEnd: 0
     - _FoldoutWithKey: 0
-    - _FoldoutWithKey2: 2
+    - _FoldoutWithKey2: 3
     - _Metalness: 0
     - _OutlineClampScale: 1.32
     - _OutlineWidth: 1.75

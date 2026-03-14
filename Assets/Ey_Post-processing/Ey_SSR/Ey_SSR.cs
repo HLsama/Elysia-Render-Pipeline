@@ -8,7 +8,7 @@ public class Ey_SSR : ScriptableRendererFeature
 {
     //[SerializeField] private Ey_SSRSettings Ey_Settings = new Ey_SSRSettings();
     private Shader Ey_Shader;
-    private const string Ey_ShaderName = "Ey_SSR";
+    private const string Ey_ShaderName = "Ey_Post-processing/Ey_SSR";
     private Material Ey_Material;
     private Ey_SSR_RenderPass Ey_RenderPass;
     private HizRenderPass Hiz_RenderPass;

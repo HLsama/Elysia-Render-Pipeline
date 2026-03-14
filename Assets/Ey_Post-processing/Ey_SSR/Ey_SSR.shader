@@ -1,4 +1,4 @@
-Shader "Ey_SSR"
+Shader "Ey_Post-processing/Ey_SSR"
 {
     Properties
     {

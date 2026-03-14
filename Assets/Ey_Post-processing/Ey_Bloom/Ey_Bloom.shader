@@ -1,4 +1,4 @@
-Shader "Ey_Bloom"
+Shader "Ey_Post-processing/Ey_Bloom"
 {
     Properties
     {

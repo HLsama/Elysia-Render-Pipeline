@@ -8,7 +8,7 @@ using UnityEngine.Rendering.Universal;
 public class Ey_Outline : ScriptableRendererFeature
 {
     private Shader Ey_Shader;
-    private const string Ey_ShaderName = "Ey_Outline";
+    private const string Ey_ShaderName = "Ey_Post-processing/Ey_Outline";
     private Material Ey_Material;
     private Ey_OutlineRenderPass ey_OutlineRenderPass;
 

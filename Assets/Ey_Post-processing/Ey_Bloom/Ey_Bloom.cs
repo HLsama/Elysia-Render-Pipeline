@@ -6,15 +6,16 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 
-[DisallowMultipleRendererFeature("Ey_Bloom")]//´Ë±êÇ©ÓÃÓÚ·ÀÖ¹Õâ¸örenderfeature±»ÖØ¸´Ìí¼Ó¶à´Î
+[DisallowMultipleRendererFeature("Ey_Bloom")]//æ­¤æ ‡ç­¾ç”¨äºé˜²æ­¢è¿™ä¸ªrenderfeatureè¢«é‡å¤æ·»åŠ å¤šæ¬¡
+[Tooltip("è‡ªå·±å®ç°çš„Bloom")]
 public class Ey_Bloom : ScriptableRendererFeature
 {
     //[SerializeField] private Ey_SSRSettings Ey_Settings = new Ey_SSRSettings();
     private Shader Ey_Shader;
-    private const string Ey_ShaderName = "Ey_Bloom";
+    private const string Ey_ShaderName = "Ey_Post-processing/Ey_Bloom";
     private Material Ey_Material;
     private Ey_BloomRenderPass ey_BloomRenderPass;
-    //³õÊ¼»¯
+    //åˆå§‹åŒ–
     public override void Create()
     {
         if (ey_BloomRenderPass == null)
@@ -24,15 +25,15 @@ public class Ey_Bloom : ScriptableRendererFeature
         }
     }
 
-    //Ìí¼Ópass
+    //æ·»åŠ pass
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        if (renderingData.cameraData.postProcessEnabled) //¼ì²âÊÇ·ñÆôÓÃÁËÉãÏó»úµÄºó´¦Àí
+        if (renderingData.cameraData.postProcessEnabled) //æ£€æµ‹æ˜¯å¦å¯ç”¨äº†æ‘„è±¡æœºçš„åå¤„ç†
         {
 
             if (!GetMaterials())
             {
-                Debug.LogErrorFormat("{0}.AddRenderPasses(): Ã»»ñÈ¡µ½²ÄÖÊÇò. {1} RenderPassÌí¼ÓÊ§°Ü.", GetType().Name, name);
+                Debug.LogErrorFormat("{0}.AddRenderPasses(): æ²¡è·å–åˆ°æè´¨çƒ. {1} RenderPassæ·»åŠ å¤±è´¥.", GetType().Name, name);
                 return;
             }
             bool shouldAdd = ey_BloomRenderPass.Setup(ref Ey_Material);
@@ -44,7 +45,7 @@ public class Ey_Bloom : ScriptableRendererFeature
         }
     }
 
-    //ÊÍ·ÅÄÚ´æ
+    //é‡Šæ”¾å†…å­˜
     protected override void Dispose(bool disposing)
     {
         CoreUtils.Destroy(Ey_Material);
@@ -52,7 +53,7 @@ public class Ey_Bloom : ScriptableRendererFeature
         ey_BloomRenderPass = null;
     }
 
-    //µ¥¶ÀĞ´¸öº¯ÊıÀ´»ñÈ¡²ÄÖÊÇòÓëshader£¬ÕâÑù¾Í²»ÓÃÊÖ¶¯ÈûÈë²ÄÖÊÇòÁË
+    //å•ç‹¬å†™ä¸ªå‡½æ•°æ¥è·å–æè´¨çƒä¸shaderï¼Œè¿™æ ·å°±ä¸ç”¨æ‰‹åŠ¨å¡å…¥æè´¨çƒäº†
     private bool GetMaterials()
     {
         if (Ey_Shader == null)
@@ -66,9 +67,9 @@ public class Ey_Bloom : ScriptableRendererFeature
     {
         private Ey_BloomVolumeCompact ey_BloomVolumeCompact;
         private Material EyMaterial;
-        //PassÃû³Æ
+        //Passåç§°
         private ProfilingSampler mProfilingSampler = new ProfilingSampler("Ey_Bloom");
-        //ÉèÖÃRT¸ñÊ½£¨·Ö±æÂÊ£¬Í¨µÀµÈ£©
+        //è®¾ç½®RTæ ¼å¼ï¼ˆåˆ†è¾¨ç‡ï¼Œé€šé“ç­‰ï¼‰
         private RenderTextureDescriptor EySSRDescriptor;
         private RenderTextureDescriptor[] MipDescriptors;
 
@@ -117,7 +118,7 @@ public class Ey_Bloom : ScriptableRendererFeature
                 MipDescriptors[i] = new RenderTextureDescriptor(width, height,GraphicsFormat.R16G16B16A16_SFloat, 0);
                 RenderingUtils.ReAllocateIfNeeded(ref DownTex[i], MipDescriptors[i], FilterMode.Bilinear, TextureWrapMode.Clamp, name: BloomMipDown+i);
                 RenderingUtils.ReAllocateIfNeeded(ref UpTex[i], MipDescriptors[i], FilterMode.Bilinear, TextureWrapMode.Clamp, name: UpMipDown + i);
-                //ÓÃÓÒÒÆÔËËã·ûÀ´±íÊ¾³ıÒÔ2£¬¿ÉÒÔ¼õÉÙ²¿·ÖÒì³£
+                //ç”¨å³ç§»è¿ç®—ç¬¦æ¥è¡¨ç¤ºé™¤ä»¥2ï¼Œå¯ä»¥å‡å°‘éƒ¨åˆ†å¼‚å¸¸
                 width = Mathf.Max(1, width >> 1);
                 height = Mathf.Max(1, height >> 1);
             }
@@ -125,7 +126,7 @@ public class Ey_Bloom : ScriptableRendererFeature
             EySSRDescriptor.msaaSamples = 1;
             EySSRDescriptor.depthBufferBits = 0;
             RenderingUtils.ReAllocateIfNeeded(ref SSRTexture0, EySSRDescriptor, name: SSRTexture0Name);
-            // ÅäÖÃÄ¿±êºÍÇå³ı
+            // é…ç½®ç›®æ ‡å’Œæ¸…é™¤
             ConfigureTarget(renderer.cameraColorTargetHandle);
             ConfigureClear(ClearFlag.None, Color.white);
         }
@@ -143,17 +144,17 @@ public class Ey_Bloom : ScriptableRendererFeature
             context.ExecuteCommandBuffer(cmd);
             cmd.Clear();
 
-            //Ô´ºÍÄ¿±êTex
+            //æºå’Œç›®æ ‡Tex
             srcTexture = renderingData.cameraData.renderer.cameraColorTargetHandle;
             dstTexture = renderingData.cameraData.renderer.cameraColorTargetHandle;
-            //ÕâÀïProfilingScopeÆäÊµÊÇĞÔÄÜ·ÖÎö¹¤¾ß£¬½«äÖÈ¾Âß¼­·Å½øÕâÀï¿ÉÒÔË³±ã·ÖÎöĞÔÄÜ
+            //è¿™é‡ŒProfilingScopeå…¶å®æ˜¯æ€§èƒ½åˆ†æå·¥å…·ï¼Œå°†æ¸²æŸ“é€»è¾‘æ”¾è¿›è¿™é‡Œå¯ä»¥é¡ºä¾¿åˆ†ææ€§èƒ½
             using (new ProfilingScope(cmd, mProfilingSampler))
             {
                 cmd.SetGlobalFloat(LuminanceThresholeID, ey_BloomVolumeCompact.LuminanceThreshole.value);
                 Blitter.BlitCameraTexture(cmd, srcTexture, SSRTexture0, EyMaterial, 0);
                 Blitter.BlitCameraTexture(cmd, SSRTexture0, DownTex[0], EyMaterial, 5);
-                //ÔÚÁ½¸öPassÖĞ½øĞĞÏÂ²ÉÑù£¨½«Ò»¸ö¶şÎ¬¸ßË¹ºË²ğ½âÎªÁ½¸öÒ»Î¬¸ßË¹ºË£©
-                //£¨ÕâÀïÓÃÉÏ²ÉÑùÎÆÀíÖ»ÊÇÄÃÀ´³äµ±ÖĞ¼äÎÆÀí£©
+                //åœ¨ä¸¤ä¸ªPassä¸­è¿›è¡Œä¸‹é‡‡æ ·ï¼ˆå°†ä¸€ä¸ªäºŒç»´é«˜æ–¯æ ¸æ‹†è§£ä¸ºä¸¤ä¸ªä¸€ç»´é«˜æ–¯æ ¸ï¼‰
+                //ï¼ˆè¿™é‡Œç”¨ä¸Šé‡‡æ ·çº¹ç†åªæ˜¯æ‹¿æ¥å……å½“ä¸­é—´çº¹ç†ï¼‰
                 var lastDown = DownTex[0];
                 for (int i=1;i<ey_BloomVolumeCompact.MipCount.value;i++)
                 {
@@ -161,13 +162,13 @@ public class Ey_Bloom : ScriptableRendererFeature
                     Blitter.BlitCameraTexture(cmd, UpTex[i], DownTex[i], RenderBufferLoadAction.DontCare, RenderBufferStoreAction.Store, EyMaterial, 2);
                     lastDown = DownTex[i];
                 }
-                //ÉÏ²ÉÑù
+                //ä¸Šé‡‡æ ·
                 for (int i = ey_BloomVolumeCompact.MipCount.value - 2; i >= 0; i--)
                 {
                     var lowMip = (i == ey_BloomVolumeCompact.MipCount.value - 2) ? DownTex[i + 1] : UpTex[i + 1];
                     var highMip = DownTex[i];
                     cmd.SetGlobalTexture(PrevTexId, lowMip);
-                    //ºÏ³É
+                    //åˆæˆ
                     Blitter.BlitCameraTexture(cmd, highMip, UpTex[i], RenderBufferLoadAction.DontCare, RenderBufferStoreAction.Store, EyMaterial, 3);
                 }
                 cmd.SetGlobalFloat(BloomIntensity,ey_BloomVolumeCompact.BloomIntensity.value);
@@ -184,7 +185,7 @@ public class Ey_Bloom : ScriptableRendererFeature
             srcTexture = null;
             dstTexture = null;
         }
-        //ÊÍ·Åº¯Êı
+        //é‡Šæ”¾å‡½æ•°
         public void Dispose()
         {
             SSRTexture0?.Release();

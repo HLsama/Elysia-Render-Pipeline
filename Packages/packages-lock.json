@@ -1,15 +1,5 @@
 {
   "dependencies": {
-    "com.danbaidong.smoothnormal": {
-      "version": "file:E:/下载（暂时）/SmoothNormal-main/SmoothNormal-main",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {
-        "com.unity.mathematics": "1.2.1",
-        "com.unity.burst": "1.8.4",
-        "com.unity.render-pipelines.core": "14.0.8"
-      }
-    },
     "com.unity.burst": {
       "version": "1.8.18",
       "depth": 1,
@@ -124,7 +114,7 @@
       }
     },
     "com.unity.render-pipelines.universal": {
-      "version": "file:com.unity.render-pipelines.universal@14.0.11",
+      "version": "file:com.unity.render-pipelines.universal",
       "depth": 0,
       "source": "embedded",
       "dependencies": {

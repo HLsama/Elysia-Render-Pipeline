@@ -118,7 +118,7 @@ Material:
     - _Foldout: 1
     - _FoldoutEnd1: 0
     - _FoldoutEnd2: 0
-    - _FoldoutWithKey: 2
+    - _FoldoutWithKey: 3
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -131,12 +131,12 @@ Material:
     - _RangeSlider1: 0
     - _RangeSlider2: 0
     - _ReceiveShadows: 1
-    - _SliderMax: 2.9571629
+    - _SliderMax: 2.9947567
     - _SliderMax0: -4
-    - _SliderMax2: 5.416929
-    - _SliderMin: 2.245594
+    - _SliderMax2: 5.585715
+    - _SliderMin: 1.9072481
     - _SliderMin0: -5
-    - _SliderMin2: 4.3
+    - _SliderMin2: 4.4353385
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

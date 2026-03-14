@@ -1,4 +1,4 @@
-Shader "Ey_Outline"
+Shader "Ey_Post-processing/Ey_Outline"
 {
     Properties
     {

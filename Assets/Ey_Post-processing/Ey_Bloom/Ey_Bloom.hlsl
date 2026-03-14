@@ -230,4 +230,3 @@ float4 eyFirstDownfrag (v2f i) : SV_Target
     color /= weight;
     return float4(color,1.0);
 }
-

@@ -18,13 +18,13 @@ MonoBehaviour:
     m_Value: {r: 0, g: 0, b: 0, a: 1}
   OutlineWitch:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.33
   OutlineDepthThreshold:
     m_OverrideState: 1
-    m_Value: 12.44
+    m_Value: 5.34
   OutlineNormalThreshold:
     m_OverrideState: 1
-    m_Value: 0.63
+    m_Value: 0.5
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43a42ad7fb198243ad9c0f4419615e4, type: 3}
   m_Name: Ey_SSRVolumeCompact
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   Thickness:
     m_OverrideState: 1
     m_Value: 0.75
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39f342759926d049aefd8902915587b, type: 3}
   m_Name: Ey_BloomVolumeCompact
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   MipCount:
     m_OverrideState: 1
     m_Value: 6
